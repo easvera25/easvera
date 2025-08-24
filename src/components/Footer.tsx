@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               marginTop: '1rem'
             }}>
               <a 
-                href="https://linkedin.com/company/techservicespro" 
+                href="https://linkedin.com/company/esavera" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{ color: '#9ca3af', textDecoration: 'none' }}
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 LinkedIn
               </a>
               <a 
-                href="https://twitter.com/techservicespro" 
+                href="https://twitter.com/esavera" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{ color: '#9ca3af', textDecoration: 'none' }}
