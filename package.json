@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "type": "module",
-    "homepage": "https://easvera25.github.io/",
+    "homepage": "https://easvera25.github.io/easvera/",
     "scripts": {
       "dev": "vite",
       "build": "tsc && vite build",
