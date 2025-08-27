@@ -56,6 +56,7 @@ export const blogArticles = [
     slug: "top-10-qa-testing-trends-2025",
     category: "Quality Assurance",
     author: "Sarah Johnson",
+    imageUrl: "/images/qa-trends.png",
     date: "2025-08-20",
     readTime: "8 min read",
     tags: ["QA", "Testing", "Trends", "Automation"],
