@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <div>
       <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
         <img
-          src="/esavera.png"
+          src="esavera.png"
           alt="Esavera Solution Logo"
           style={{ width: '150px', height: 'auto' }} // Adjust size as you wish
         />
