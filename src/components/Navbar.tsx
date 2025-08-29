@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
         <div className="navbar-brand">
             <Link to="/">
               <img
-                src="public/esavera.png"
+                src="esavera.png"
                 alt="Esavera Solution Logo"
                 style={{ height: '120px', marginRight: '50px' }}
               />
