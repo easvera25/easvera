@@ -6,6 +6,13 @@ import { servicesData } from '../data/content';
 const Home: React.FC = () => {
   return (
     <div>
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+        <img
+          src="/esavera.png"
+          alt="Esavera Solution Logo"
+          style={{ width: '150px', height: 'auto' }} // Adjust size as you wish
+        />
+      </div>
       <Hero
         title="Your Complete IT Services Partner"
         subtitle="Empowering businesses with comprehensive QA training, custom web development, and reliable IT support services."

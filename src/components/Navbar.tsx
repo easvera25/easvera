@@ -20,9 +20,16 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="container">
         <div className="navbar-content">
-          <div className="navbar-brand">
+        <div className="navbar-brand">
             <Link to="/">
-              <h2>Esavera Solution</h2>
+              <img
+                src="/esavera.png"
+                alt="Esavera Solution Logo"
+                style={{ height: '120px', marginRight: '50px' }}
+              />
+              {/* <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--primary-color)' }}>
+                Esavera Solution
+              </span> */}
             </Link>
           </div>
 
