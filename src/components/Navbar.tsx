@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
               <img
                 src="esavera.png"
                 alt="Esavera Solution Logo"
-                style={{ height: '120px', marginRight: '50px' }}
+                style={{ height: '220px', marginRight: '50px' }}
               />
               {/* <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--primary-color)' }}>
                 Esavera Solution
