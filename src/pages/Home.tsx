@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         />
       </div>
       <Hero
-        title="Your Complete IT Services Partner"
+        title="Desgin your digital future with Esavera"
         subtitle="Empowering businesses with comprehensive QA training, custom web development, and reliable IT support services."
         description="We help businesses thrive in the digital world with expert-led training, cutting-edge web solutions, and round-the-clock technical support."
         primaryButton={{ text: "Get Started Today", href: "/contact" }}
