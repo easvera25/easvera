@@ -24,7 +24,10 @@ jobs:
 
       - name: Build Project
         run: npm run build
-
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
       - name: Deploy Dist to Deploy Branch
         run: |
           git config --global user.name "github-actions"
@@ -46,5 +49,5 @@ jobs:
           # Commit and push
           git add .
           git commit -m "Deploy build from GitHub Actions" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/easvera25/easvera.git deploy --force
+          git push git@github.com:easvera25/easvera.git deploy --force
 
