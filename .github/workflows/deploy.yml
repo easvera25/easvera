@@ -1,39 +1,49 @@
 name: Build and Deploy Vite React to Hostinger
 
 on:
-push:
-branches: [ main ]
-workflow_dispatch:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout Code
-uses: actions/checkout@v4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-```
-  - name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
-      cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-  - name: Install Dependencies
-    run: npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-  - name: Build Project
-    run: npm run build
+      - name: Build Project
+        run: npm run build
 
-  - name: Deploy Dist to Deploy Branch
-    run: |
-      git config --global user.name "github-actions"
-      git config --global user.email "github-actions@github.com"
-      git fetch origin
-      git checkout -B deploy
-      rm -rf ./*
-      cp -r dist/* .
-      git add .
-      git commit -m "Deploy build from GitHub Actions" || echo "No changes to commit"
-      git push origin deploy --force
-```
+      - name: Deploy Dist to Deploy Branch
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          # Save dist folder before switching branches
+          cp -r dist ../dist-temp
+
+          # Switch to deploy branch (create if not exists)
+          git fetch origin
+          git checkout deploy || git checkout --orphan deploy
+
+          # Clear old files
+          rm -rf ./*
+
+          # Copy new build files
+          cp -r ../dist-temp/* .
+
+          # Commit and push
+          git add .
+          git commit -m "Deploy build from GitHub Actions" || echo "No changes to commit"
+          git push origin deploy --force
