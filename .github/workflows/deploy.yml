@@ -1,4 +1,4 @@
-name: Build and Deploy Hostinger
+name: Build and Deploy Vite React to Hostinger
 
 on:
   push:
@@ -24,30 +24,21 @@ jobs:
 
       - name: Build Project
         run: npm run build
+
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.1
+        uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
       - name: Deploy Dist to Deploy Branch
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-
-          # Save dist folder before switching branches
           cp -r dist ../dist-temp
-
-          # Switch to deploy branch (create if not exists)
           git fetch origin
           git checkout deploy || git checkout --orphan deploy
-
-          # Clear old files
           rm -rf ./*
-
-          # Copy new build files
           cp -r ../dist-temp/* .
-
-          # Commit and push
           git add .
           git commit -m "Deploy build from GitHub Actions" || echo "No changes to commit"
           git push git@github.com:easvera25/easvera.git deploy --force
-
