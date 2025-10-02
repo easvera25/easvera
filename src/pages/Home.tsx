@@ -9,7 +9,7 @@ const Home: React.FC = () => {
       <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
         <img
           src={`${import.meta.env.BASE_URL}esavera.png`}
-          alt="Esavera Solution Logo"
+          alt="Esavera Logo"
           style={{ width: '250px', height: 'auto' }} // Adjust size as you wish
         />
       </div>
